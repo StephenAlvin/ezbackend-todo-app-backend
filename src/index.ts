@@ -1,7 +1,7 @@
-import {EzBackend, EzModel, Type} from '@ezbackend/common'
-import { EzOpenAPI } from "@ezbackend/openapi";
-import { EzDbUI } from "@ezbackend/db-ui";
-import { EzCors } from "@ezbackend/cors";
+import { EzBackend, EzModel, Type } from '@ezbackend/common'
+import { EzOpenAPI } from '@ezbackend/openapi'
+import { EzDbUI } from '@ezbackend/db-ui'
+import { EzCors } from '@ezbackend/cors'
 const app = new EzBackend()
 //---Plugins---
 //Everything is an ezapp in ezbackend
@@ -14,4 +14,9 @@ const todo = new EzModel('Todo', {
 
 app.addApp(todo, { prefix: 'todo' })
 
-app.start()
+app.start({
+  address: '0.0.0.0',
+  server: {
+    trustProxy: true,
+  }
+})
