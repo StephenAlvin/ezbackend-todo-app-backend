@@ -5,13 +5,6 @@ import { EzCors } from "@ezbackend/cors";
 
 const app = new EzBackend()
 
-//---Plugins---
-//Everything is an ezapp in ezbackend
-app.addApp(new EzOpenAPI())
-app.addApp(new EzDbUI())
-app.addApp(new EzCors())
-//---Plugins---
-
 const todo = new EzModel('Todo', {
   content: Type.VARCHAR,
 })
