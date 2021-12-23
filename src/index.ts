@@ -16,7 +16,4 @@ app.addApp(todo, { prefix: 'todo' })
 
 app.start({
   address: '0.0.0.0',
-  server: {
-    trustProxy: true,
-  }
 })
